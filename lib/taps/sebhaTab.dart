@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SebhaTab extends StatefulWidget {
    SebhaTab({Key? key}) : super(key: key);
@@ -54,22 +55,26 @@ String tasbeh="سبحان الله";
                   margin: EdgeInsets.only(top: 80),
                   child: Center(
                       child: Image.asset(
-                    "assets/images/body_sebha_logo.png",
-                    height: 234,
-                    width: 232,
+                        "assets/images/body_sebha_logo.png",
+                    height: 150,
+                    width: 150,
                   )),
                 ),
               ],
             ),
           ),
           SizedBox(
-            height: 10,
+            height: 30,
           ),
           Container(
             child: Text(
               "عدد التسبيحات",
-              style: Theme.of(context).textTheme.titleSmall,
+              style: GoogleFonts.elMessiri(
+                  fontSize: 25, fontWeight: FontWeight.bold),
             ),
+          ),
+          SizedBox(
+            height: 30,
           ),
           Container(
             padding: EdgeInsets.all(25),
@@ -81,14 +86,16 @@ String tasbeh="سبحان الله";
               style: Theme.of(context).textTheme.titleSmall,
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 30,
+          ),
           Container(
             padding: EdgeInsets.all(25),
             decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(25)),
             child: Text(
-               "$tasbeh",
+              "$tasbeh",
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),
