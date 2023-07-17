@@ -30,9 +30,10 @@ class _SuraContantState extends State<SuraContant> {
           ),
         ),
         body: Card(
-          margin: EdgeInsets.symmetric(horizontal: 14,vertical: 16),
+          margin: EdgeInsets.symmetric(horizontal: 14, vertical: 16),
           elevation: 12,
-          shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(14)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
           child: ListView.separated(
             separatorBuilder: (context, index) => Divider(
               endIndent: 40,
@@ -44,7 +45,10 @@ class _SuraContantState extends State<SuraContant> {
               return Center(
                 child: Directionality(
                     textDirection: TextDirection.rtl,
-                    child: Text(verses[index],textAlign: TextAlign.center,)),
+                    child: Text(
+                      verses[index],
+                      textAlign: TextAlign.center,
+                    )),
               );
             },
             itemCount: verses.length,
