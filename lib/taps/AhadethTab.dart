@@ -3,6 +3,7 @@ import 'package:eslamimid/hadeth_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AhadethTab extends StatefulWidget {
   @override
@@ -29,8 +30,8 @@ class _AhadethTabState extends State<AhadethTab> {
             color: Theme.of(context).primaryColor,
           ),
           Text(
-            "Ahadeth",
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+            AppLocalizations.of(context)!.ahadeth,
+            style: Theme.of(context).textTheme.bodyMedium,
             textAlign: TextAlign.center,
           ),
           Divider(
