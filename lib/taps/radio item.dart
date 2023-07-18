@@ -31,7 +31,9 @@ class Radio_Item extends StatelessWidget {
                   icon: Icon(
                     Icons.play_arrow_sharp,
                     size: 40,
-                    color: Theme.of(context).primaryColor,
+                    color: ThemeData == ThemeMode.light
+                        ? Theme.of(context).primaryColor
+                        : Theme.of(context).primaryColorDark,
                   )),
               SizedBox(
                 width: 10,
@@ -43,7 +45,9 @@ class Radio_Item extends StatelessWidget {
                   icon: Icon(
                     Icons.pause,
                     size: 40,
-                    color: Theme.of(context).primaryColor,
+                    color: ThemeData == ThemeMode.light
+                        ? Theme.of(context).primaryColor
+                        : Theme.of(context).primaryColorDark,
                   )),
             ],
           )

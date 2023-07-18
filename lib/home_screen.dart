@@ -28,7 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Stack(
       children: [
         Image.asset(
-          "assets/images/bg3.png",
+          ThemeData == ThemeMode.light
+              ? "assets/images/bg3.png"
+              : "assets/images/bg.png",
           fit: BoxFit.fill,
         ),
         Container(

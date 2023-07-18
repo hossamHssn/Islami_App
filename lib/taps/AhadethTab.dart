@@ -1,3 +1,4 @@
+import 'package:eslamimid/My_Theme.dart';
 import 'package:eslamimid/hadeth_content.dart';
 import 'package:eslamimid/hadeth_model.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,9 @@ class _AhadethTabState extends State<AhadethTab> {
           ),
           Divider(
             thickness: 2,
-            color: Theme.of(context).primaryColor,
+            color: ThemeData == ThemeMode.light
+                ? Theme.of(context).primaryColor
+                : MyTheme.yellowcolor,
           ),
           Text(
             AppLocalizations.of(context)!.ahadeth,
@@ -36,7 +39,9 @@ class _AhadethTabState extends State<AhadethTab> {
           ),
           Divider(
             thickness: 2,
-            color: Theme.of(context).primaryColor,
+            color: ThemeData == ThemeMode.light
+                ? Theme.of(context).primaryColor
+                : MyTheme.yellowcolor,
           ),
           Expanded(
             child: ListView.separated(
@@ -58,7 +63,9 @@ class _AhadethTabState extends State<AhadethTab> {
                 thickness: 2,
                 endIndent: 35,
                 indent: 35,
-                color: Theme.of(context).primaryColor,
+                color: ThemeData == ThemeMode.light
+                    ? Theme.of(context).primaryColor
+                    : MyTheme.yellowcolor,
               ),
             ),
           )

@@ -21,7 +21,10 @@ class _SuraContantState extends State<SuraContant> {
 
     return Container(
       decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/images/bg3.png"))),
+          image: DecorationImage(
+              image: AssetImage(ThemeData == ThemeMode.light
+                  ? "assets/images/bg3.png"
+                  : "assets/images/bg.png"))),
       child: Scaffold(
         appBar: AppBar(
           title: Text(
@@ -30,6 +33,9 @@ class _SuraContantState extends State<SuraContant> {
           ),
         ),
         body: Card(
+          color: ThemeData == ThemeMode.light
+              ? Theme.of(context).primaryColor
+              : Theme.of(context).primaryColorDark,
           margin: EdgeInsets.symmetric(horizontal: 14, vertical: 16),
           elevation: 12,
           shape:
@@ -48,6 +54,7 @@ class _SuraContantState extends State<SuraContant> {
                     child: Text(
                       verses[index],
                       textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodySmall,
                     )),
               );
             },

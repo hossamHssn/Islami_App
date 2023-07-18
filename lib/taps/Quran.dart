@@ -1,3 +1,4 @@
+import 'package:eslamimid/My_Theme.dart';
 import 'package:eslamimid/Sura_model.dart';
 import 'package:eslamimid/taps/SuraContant.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranTab extends StatelessWidget {
-
   List<String> SuraName = [
     "الفاتحه",
     "البقرة",
@@ -131,7 +131,9 @@ class QuranTab extends StatelessWidget {
           Image.asset("assets/images/qur2an_screen_logo.png"),
           Divider(
             thickness: 2,
-            color: Theme.of(context).primaryColor,
+            color: ThemeData == ThemeMode.dark
+                ? Theme.of(context).primaryColor
+                : MyTheme.yellowcolor,
           ),
           Text(
             AppLocalizations.of(context)!.suraNames,
@@ -140,13 +142,17 @@ class QuranTab extends StatelessWidget {
           ),
           Divider(
             thickness: 2,
-            color: Theme.of(context).primaryColor,
+            color: ThemeData == ThemeMode.light
+                ? Theme.of(context).primaryColor
+                : MyTheme.yellowcolor,
           ),
           Expanded(
             child: ListView.separated(
               separatorBuilder: (context, index) => Divider(
                 thickness: 1,
-                color: Theme.of(context).primaryColor,
+                color: ThemeData == ThemeMode.light
+                    ? Theme.of(context).primaryColor
+                    : MyTheme.yellowcolor,
                 indent: 35,
                 endIndent: 35,
               ),
@@ -158,9 +164,8 @@ class QuranTab extends StatelessWidget {
                   },
                   child: Center(
                       child: Text(
-                    SuraName[index],
-                    style: GoogleFonts.elMessiri(
-                        fontSize: 25, fontWeight: FontWeight.w300),
+                        SuraName[index],
+                    style: Theme.of(context).textTheme.bodyMedium,
                   )),
                 );
               },

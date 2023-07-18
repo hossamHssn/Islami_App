@@ -3,16 +3,16 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SebhaTab extends StatefulWidget {
-   SebhaTab({Key? key}) : super(key: key);
+  SebhaTab({Key? key}) : super(key: key);
 
   @override
   State<SebhaTab> createState() => _SebhaTabState();
 }
 
 class _SebhaTabState extends State<SebhaTab> {
-int counter=0;
-int numtas=0;
-String tasbeh="سبحان الله";
+  int counter = 0;
+  int numtas = 0;
+  String tasbeh = "سبحان الله";
 
   @override
   Widget build(BuildContext context) {
@@ -24,23 +24,21 @@ String tasbeh="سبحان الله";
             onTap: () {
               counter++;
               numtas++;
-              if(counter==32){
-                tasbeh="الحمد لله";
-                numtas=0;
-              }else if(counter==64){
-                tasbeh="الله أكبر";
-                numtas=0;
-              }else if(counter==96){
-                tasbeh="لااله الا الله";
-                numtas=0;
-              }else if(counter==128){
-                counter=0;
-                numtas=0;
-                tasbeh="سبحان الله";
+              if (counter == 32) {
+                tasbeh = "الحمد لله";
+                numtas = 0;
+              } else if (counter == 64) {
+                tasbeh = "الله أكبر";
+                numtas = 0;
+              } else if (counter == 96) {
+                tasbeh = "لااله الا الله";
+                numtas = 0;
+              } else if (counter == 128) {
+                counter = 0;
+                numtas = 0;
+                tasbeh = "سبحان الله";
               }
-              setState(() {
-
-              });
+              setState(() {});
             },
             child: Stack(
               children: [
