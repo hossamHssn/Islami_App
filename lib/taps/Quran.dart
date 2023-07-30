@@ -1,9 +1,11 @@
 import 'package:eslamimid/My_Theme.dart';
 import 'package:eslamimid/Sura_model.dart';
+import 'package:eslamimid/providers/Myprovider.dart';
 import 'package:eslamimid/taps/SuraContant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class QuranTab extends StatelessWidget {
   List<String> SuraName = [
@@ -125,13 +127,14 @@ class QuranTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<Myprovider>(context);
     return Center(
       child: Column(
         children: [
           Image.asset("assets/images/qur2an_screen_logo.png"),
           Divider(
             thickness: 2,
-            color: ThemeData == ThemeMode.dark
+            color: provider.themeMode == ThemeData.dark
                 ? Theme.of(context).primaryColor
                 : MyTheme.yellowcolor,
           ),
@@ -142,7 +145,7 @@ class QuranTab extends StatelessWidget {
           ),
           Divider(
             thickness: 2,
-            color: ThemeData == ThemeMode.light
+            color: provider.themeMode == ThemeData.light
                 ? Theme.of(context).primaryColor
                 : MyTheme.yellowcolor,
           ),
@@ -150,7 +153,7 @@ class QuranTab extends StatelessWidget {
             child: ListView.separated(
               separatorBuilder: (context, index) => Divider(
                 thickness: 1,
-                color: ThemeData == ThemeMode.light
+                color: provider.themeMode == ThemeData.light
                     ? Theme.of(context).primaryColor
                     : MyTheme.yellowcolor,
                 indent: 35,
@@ -165,8 +168,8 @@ class QuranTab extends StatelessWidget {
                   child: Center(
                       child: Text(
                         SuraName[index],
-                    style: Theme.of(context).textTheme.bodyMedium,
-                  )),
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      )),
                 );
               },
               itemCount: SuraName.length,

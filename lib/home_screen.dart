@@ -1,3 +1,4 @@
+import 'package:eslamimid/providers/Myprovider.dart';
 import 'package:eslamimid/taps/AhadethTab.dart';
 import 'package:eslamimid/taps/Quran.dart';
 import 'package:eslamimid/taps/RadioTab.dart';
@@ -5,6 +6,7 @@ import 'package:eslamimid/taps/sebhaTab.dart';
 import 'package:eslamimid/taps/settings_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routename = "home";
@@ -25,10 +27,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<Myprovider>(context);
     return Stack(
       children: [
         Image.asset(
-          ThemeData == ThemeMode.light
+          provider.themeMode == ThemeMode.light
               ? "assets/images/bg3.png"
               : "assets/images/bg.png",
           fit: BoxFit.fill,

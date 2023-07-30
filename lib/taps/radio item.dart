@@ -1,6 +1,8 @@
 import 'package:eslamimid/model/radio_response.dart';
+import 'package:eslamimid/providers/Myprovider.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:provider/provider.dart';
 
 class Radio_Item extends StatelessWidget {
   Radios radio;
@@ -10,6 +12,7 @@ class Radio_Item extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<Myprovider>(context);
     return Container(
       width: MediaQuery.of(context).size.width,
       child: Column(
@@ -31,7 +34,7 @@ class Radio_Item extends StatelessWidget {
                   icon: Icon(
                     Icons.play_arrow_sharp,
                     size: 40,
-                    color: ThemeData == ThemeMode.light
+                    color: provider.themeMode == ThemeData.light
                         ? Theme.of(context).primaryColor
                         : Theme.of(context).primaryColorDark,
                   )),
@@ -45,7 +48,7 @@ class Radio_Item extends StatelessWidget {
                   icon: Icon(
                     Icons.pause,
                     size: 40,
-                    color: ThemeData == ThemeMode.light
+                    color: provider.themeMode == ThemeData.light
                         ? Theme.of(context).primaryColor
                         : Theme.of(context).primaryColorDark,
                   )),

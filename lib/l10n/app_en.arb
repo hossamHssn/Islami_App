@@ -5,5 +5,11 @@
   "quraan": "Quraan",
   "sebha": "sebha",
   "radio": "RAdio",
-  "settings": "Settings"
+  "settings": "Settings",
+  "arabic": "Arabic",
+  "english": "English",
+  "light": "Light",
+  "dark": "Dark",
+  "theme": "Theme",
+  "language": "Language"
 }

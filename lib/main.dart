@@ -2,6 +2,7 @@ import 'package:eslamimid/My_Theme.dart';
 import 'package:eslamimid/hadeth_content.dart';
 import 'package:eslamimid/home_screen.dart';
 import 'package:eslamimid/providers/Myprovider.dart';
+import 'package:eslamimid/taps/Splash_Screen.dart';
 import 'package:eslamimid/taps/SuraContant.dart';
 import 'package:flutter/material.dart';
 
@@ -27,14 +28,15 @@ class Myapplication extends StatelessWidget {
       ],
       locale: Locale(provider.LanguageCode),
       supportedLocales: [Locale("en"), Locale("ar")],
-      themeMode: ThemeMode.dark,
+      themeMode: provider.themeMode,
       darkTheme: MyTheme.Darktheme,
       theme: MyTheme.Lighttheme,
-      initialRoute: HomeScreen.routename,
+      initialRoute: SplashScreen.Routename,
       routes: {
         HomeScreen.routename: (context) => HomeScreen(),
         SuraContant.routename: (context) => SuraContant(),
         Hadethcontent.routename: (context) => Hadethcontent(),
+        SplashScreen.Routename: (context) => SplashScreen(),
       },
       debugShowCheckedModeBanner: false,
     );
