@@ -1,6 +1,9 @@
+import 'package:eslamimid/My_Theme.dart';
 import 'package:eslamimid/Sura_model.dart';
+import 'package:eslamimid/providers/Myprovider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 class SuraContant extends StatefulWidget {
   static const String routename = "Suracontant";
@@ -14,6 +17,7 @@ class _SuraContantState extends State<SuraContant> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<Myprovider>(context);
     var args = ModalRoute.of(context)?.settings.arguments as SuraModel;
     if (verses.isEmpty) {
       loadfile(args.index);
@@ -22,7 +26,7 @@ class _SuraContantState extends State<SuraContant> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(ThemeData == ThemeMode.light
+              image: AssetImage(provider.themeMode == ThemeMode.light
                   ? "assets/images/bg3.png"
                   : "assets/images/bg.png"))),
       child: Scaffold(
@@ -33,19 +37,21 @@ class _SuraContantState extends State<SuraContant> {
           ),
         ),
         body: Card(
-          color: ThemeData == ThemeMode.light
+          color: provider.themeMode == ThemeMode.light
               ? Theme.of(context).primaryColor
               : Theme.of(context).primaryColorDark,
           margin: EdgeInsets.symmetric(horizontal: 14, vertical: 16),
           elevation: 12,
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
           child: ListView.separated(
             separatorBuilder: (context, index) => Divider(
               endIndent: 40,
               indent: 40,
               thickness: 2,
-              color: Theme.of(context).primaryColor,
+              color: provider.themeMode == ThemeMode.light
+                  ? MyTheme.darkcolor
+                  : MyTheme.yellowcolor,
             ),
             itemBuilder: (context, index) {
               return Center(
@@ -54,7 +60,10 @@ class _SuraContantState extends State<SuraContant> {
                     child: Text(
                       verses[index],
                       textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodySmall,
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                          color: provider.themeMode == ThemeMode.light
+                              ? Colors.white
+                              : MyTheme.yellowcolor),
                     )),
               );
             },

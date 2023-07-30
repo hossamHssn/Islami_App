@@ -134,7 +134,7 @@ class QuranTab extends StatelessWidget {
           Image.asset("assets/images/qur2an_screen_logo.png"),
           Divider(
             thickness: 2,
-            color: provider.themeMode == ThemeData.dark
+            color: provider.themeMode == ThemeMode.light
                 ? Theme.of(context).primaryColor
                 : MyTheme.yellowcolor,
           ),
@@ -145,7 +145,7 @@ class QuranTab extends StatelessWidget {
           ),
           Divider(
             thickness: 2,
-            color: provider.themeMode == ThemeData.light
+            color: provider.themeMode == ThemeMode.light
                 ? Theme.of(context).primaryColor
                 : MyTheme.yellowcolor,
           ),
@@ -153,7 +153,7 @@ class QuranTab extends StatelessWidget {
             child: ListView.separated(
               separatorBuilder: (context, index) => Divider(
                 thickness: 1,
-                color: provider.themeMode == ThemeData.light
+                color: provider.themeMode == ThemeMode.light
                     ? Theme.of(context).primaryColor
                     : MyTheme.yellowcolor,
                 indent: 35,

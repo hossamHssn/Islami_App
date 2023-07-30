@@ -1,10 +1,12 @@
 import 'package:eslamimid/My_Theme.dart';
 import 'package:eslamimid/hadeth_content.dart';
 import 'package:eslamimid/hadeth_model.dart';
+import 'package:eslamimid/providers/Myprovider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class AhadethTab extends StatefulWidget {
   @override
@@ -16,6 +18,7 @@ class _AhadethTabState extends State<AhadethTab> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<Myprovider>(context);
     if (allAhadeth.isEmpty) {
       loadhadethFile();
     }
@@ -28,7 +31,7 @@ class _AhadethTabState extends State<AhadethTab> {
           ),
           Divider(
             thickness: 2,
-            color: ThemeData == ThemeMode.light
+            color: provider.themeMode == ThemeMode.light
                 ? Theme.of(context).primaryColor
                 : MyTheme.yellowcolor,
           ),
@@ -39,7 +42,7 @@ class _AhadethTabState extends State<AhadethTab> {
           ),
           Divider(
             thickness: 2,
-            color: ThemeData == ThemeMode.light
+            color: provider.themeMode == ThemeMode.light
                 ? Theme.of(context).primaryColor
                 : MyTheme.yellowcolor,
           ),
@@ -63,7 +66,7 @@ class _AhadethTabState extends State<AhadethTab> {
                 thickness: 2,
                 endIndent: 35,
                 indent: 35,
-                color: ThemeData == ThemeMode.light
+                color: provider.themeMode == ThemeMode.light
                     ? Theme.of(context).primaryColor
                     : MyTheme.yellowcolor,
               ),
