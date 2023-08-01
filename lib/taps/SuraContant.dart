@@ -43,7 +43,7 @@ class _SuraContantState extends State<SuraContant> {
           margin: EdgeInsets.symmetric(horizontal: 14, vertical: 16),
           elevation: 12,
           shape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
           child: ListView.separated(
             separatorBuilder: (context, index) => Divider(
               endIndent: 40,

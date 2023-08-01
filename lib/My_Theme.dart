@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyTheme {
-  static const Color Lightcolor = Color(0xffB7935F);
+  static const Color Lightcolor = Color(0xe0b79060);
   static const Color darkcolor = Color(0xff141A2E);
   static const Color yellowcolor = Color(0xffFACC1D);
   static ThemeData Lighttheme = ThemeData(
