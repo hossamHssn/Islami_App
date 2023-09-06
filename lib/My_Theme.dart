@@ -8,6 +8,7 @@ class MyTheme {
   static ThemeData Lighttheme = ThemeData(
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Lightcolor,
+          elevation: 0.0,
           type: BottomNavigationBarType.shifting,
           selectedItemColor: Colors.black,
           unselectedItemColor: Colors.white,

@@ -8,7 +8,7 @@ import '../home_screen.dart';
 import '../providers/Myprovider.dart';
 
 class SplashScreen extends StatelessWidget {
-  static const String Routename = "SplashScreen";
+  static const String Routename = "/";
 
   @override
   Widget build(BuildContext context) {
